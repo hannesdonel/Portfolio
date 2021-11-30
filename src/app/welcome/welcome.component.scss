@@ -1,0 +1,7 @@
+@import "../../animations";
+
+#welcome {
+  min-height: 100vh;
+  background-color: black;
+  animation: fadeIn 1s;
+}

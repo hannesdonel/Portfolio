@@ -1,0 +1,18 @@
+<div id="project-list">
+  <div class="project" *ngFor="let project of projects" data-aos="fade-up">
+    <h3
+      data-aos="fade-in"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-delay="500"
+    >
+      {{ project.name }}
+    </h3>
+    <p
+      data-aos="fade-in"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-delay="500"
+    >
+      {{ project.description }}
+    </p>
+  </div>
+</div>

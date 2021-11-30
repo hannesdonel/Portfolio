@@ -1,0 +1,17 @@
+#navigation {
+  width: 100%;
+  height: var(--menubar-height);
+  background: wheat;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active-link {
+  text-decoration: underline;
+}
