@@ -1,0 +1,91 @@
+// Custom Theming for Angular Material
+@use "@angular/material" as mat;
+
+// Import Fonts
+// Archivo black
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+// Noto Sans
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+// Include the common styles for Angular Material.
+@include mat.core();
+
+// DARK THEME: Define the palettes for dark theme using the Material Design palettes. Available color palettes: https://material.io/design/color/
+$Portfolio-primary-dark: mat.define-palette(
+  mat.$blue-gray-palette,
+  800,
+  700,
+  900,
+  50
+);
+$Portfolio-accent-dark: mat.define-palette(
+  mat.$light-green-palette,
+  600,
+  400,
+  800
+);
+$Portfolio-warn-dark: mat.define-palette(mat.$red-palette);
+
+// Create dark theme.
+$Portfolio-theme-dark: mat.define-dark-theme(
+  (
+    color: (
+      primary: $Portfolio-primary-dark,
+      accent: $Portfolio-accent-dark,
+      warn: $Portfolio-warn-dark,
+    ),
+  )
+);
+
+// LIGHT THEME: Define the palettes for dark theme using the Material Design palettes. Available color palettes: https://material.io/design/color/
+$Portfolio-primary-light: mat.define-palette(
+  mat.$blue-gray-palette,
+  100,
+  50,
+  200,
+  900
+);
+$Portfolio-accent-light: mat.define-palette(
+  mat.$light-green-palette,
+  200,
+  100,
+  300
+);
+$Portfolio-warn-light: mat.define-palette(mat.$red-palette);
+
+// Create light theme.
+$Portfolio-theme-light: mat.define-light-theme(
+  (
+    color: (
+      primary: $Portfolio-primary-light,
+      accent: $Portfolio-accent-light,
+      warn: $Portfolio-warn-light,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// LIGHT THEME
+@include mat.all-component-themes($Portfolio-theme-light);
+
+.accent {
+  color: mat.get-color-from-palette($Portfolio-accent-light, 900);
+}
+
+.default-background {
+  background-color: #fafafa;
+}
+
+// DARK THEME
+
+.dark-theme {
+  @include mat.all-component-themes($Portfolio-theme-dark);
+
+  .accent {
+    color: mat.get-color-from-palette($Portfolio-accent-dark, 400);
+  }
+
+  .default-background {
+    background-color: #303030;
+  }
+}

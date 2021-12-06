@@ -1,0 +1,10 @@
+#theme-container {
+  position: relative;
+  z-index: 0;
+}
+
+#responsive-container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 var(--globalPaddingLeftRight);
+}

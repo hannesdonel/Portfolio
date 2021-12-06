@@ -1,5 +1,14 @@
 <app-welcome></app-welcome>
-<app-projects></app-projects>
-<app-contact></app-contact>
+<div
+  id="theme-container"
+  class="mat-app-background"
+  [class.dark-theme]="isDarkMode"
+>
+  <div id="responsive-container">
+    <app-navigation></app-navigation>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

@@ -1,3 +1,5 @@
 #projects {
-  min-height: calc(100vh - var(--menubar-height) - var(--menubar-padding));
+  margin-top: calc(var(--menubar-height) * -1 + var(--menubar-padding) * -1);
+  padding-top: calc(var(--menubar-height) + var(--menubar-padding));
+  min-height: 100vh;
 }

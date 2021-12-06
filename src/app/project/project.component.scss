@@ -4,7 +4,7 @@
 }
 
 .project {
-  margin: min(2%, 20px);
+  margin: min(2%, 20px) 0;
   border: black solid 1px;
   border-radius: 2px;
   width: 66%;
@@ -12,5 +12,9 @@
 
   &:nth-child(2n + 1) {
     align-self: flex-end;
+  }
+
+  &:first-child {
+    margin: 0 0 min(2%, 20px);
   }
 }

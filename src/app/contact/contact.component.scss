@@ -1,3 +1,4 @@
 #contact {
-  min-height: calc(100vh - var(--menubar-height) - var(--menubar-padding));
+  padding-top: calc(var(--menubar-height) + var(--menubar-padding));
+  min-height: 100vh;
 }

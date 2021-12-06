@@ -1,17 +1,43 @@
-// General Styling
-
-html {
-  scroll-behavior: smooth;
-}
-
-#projects,
-#contact {
-  margin-top: calc(var(--menubar-height) * -1);
-  padding-top: calc(var(--menubar-padding) + var(--menubar-height));
-}
+@import "./themes";
 
 // Global Variables
 :root {
   --menubar-height: 80px;
-  --menubar-padding: 20px;
+  --menubar-padding: 5px;
+  --lightSpeed: 0.25s;
+  --fastSpeed: 0.5s;
+  --mediumSpeed: 1s;
+  --slowSpeed: 1.5s;
+  --smallerFont: 0.75em;
+  --smallFont: 1em;
+  --normalFont: min(3vw, 20px);
+  --bigFont: 1.5em;
+  --fastTransition: 0.15s ease-in-out;
+  --standardTransition: 0.25s ease-in-out;
+  --globalPaddingLeftRight: max(2%, 10px);
+}
+
+// General Styling
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  font-size: var(--normalFont);
+}
+
+#projects,
+#contact {
+  z-index: 1;
+  position: relative;
+  background: inherit;
+}
+
+// Hide things
+.display-none {
+  display: none !important;
 }

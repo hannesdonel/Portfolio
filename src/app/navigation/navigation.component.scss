@@ -1,17 +1,64 @@
+@import "../../device-sizes";
+
 #navigation {
-  width: 100%;
+  max-width: 100%;
   height: var(--menubar-height);
-  background: wheat;
   position: sticky;
   top: 0;
-  left: 0;
-  z-index: 99;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--menubar-padding) 0;
+
+  mat-icon {
+    display: flex;
+    align-items: center;
+    font-size: var(--bigFont) !important;
+    width: fit-content;
+  }
 }
 
-a {
+#menu-element__container {
+  display: flex;
+  align-items: center;
+  height: min-content;
+  margin-right: calc(var(--globalPaddingLeftRight) * -1);
+  padding: 0.1vh var(--globalPaddingLeftRight) 0.1vh 1vw;
+
+  @include xxl {
+    padding: 0.1vh 0 0.1vh 0.3vw;
+  }
+}
+
+.menu-element {
+  font-family: "Archivo Black", sans-serif;
   text-decoration: none;
+  margin-right: 15px;
+  transition: var(--standardTransition);
+  border-bottom: 2px solid transparent;
+  height: 100%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:not(:first-child):hover {
+    cursor: crosshair;
+    border-color: inherit;
+  }
 }
 
-.active-link {
-  text-decoration: underline;
+#dark-mode-toggle {
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+  margin-left: 2px;
+}
+
+.isActive {
+  cursor: crosshair;
+  border-color: inherit;
 }

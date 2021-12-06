@@ -4,6 +4,7 @@ interface Props {
 
 interface Services {
   fadeOnScroll(): void,
+  isInViewport(): boolean,
 }
 
 export { Props, Services };
