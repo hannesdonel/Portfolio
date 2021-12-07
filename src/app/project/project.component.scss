@@ -1,16 +1,52 @@
 @import "../../device-sizes";
 
-#project-list {
-  display: block;
-}
-
 .project__container {
-  margin: max(4%, 20px) 0;
+  margin: max(8%, 20px) 0;
   width: 100%;
   transition: all var(--fastSpeed);
 
   &:first-child {
     margin: 0 0 min(4%, 20px);
+  }
+
+  mat-card-title * {
+    font-size: var(--normalFont) !important;
+  }
+
+  mat-card,
+  mat-card * {
+    font-family: inherit !important;
+    font-size: var(--smallFont) !important;
+  }
+
+  @include sm {
+    mat-card {
+      font-size: inherit !important;
+    }
+
+    mat-card * {
+      font-size: initial !important;
+    }
+
+    mat-card-title * {
+      font-size: var(--bigFont) !important;
+    }
+  }
+
+  mat-chip:after {
+    background-color: unset !important;
+  }
+
+  @include md {
+    mat-card {
+      background: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    mat-accordion * {
+      box-shadow: none !important;
+    }
   }
 
   mat-card-actions {

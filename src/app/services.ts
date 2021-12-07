@@ -8,8 +8,8 @@ const services = (props: Props): Services => {
       const element = document.getElementById(elementID)!;
       const elementInfo = element!.getBoundingClientRect();
       const rectangleHeight = elementInfo.height;
-      const rectangleTop = -window.scrollY; // or elementInfo.top;
-      const opacityPercent = ((rectangleTop - rectangleHeight) / rectangleHeight) + 2;
+      const rectangleTop = window.scrollY;
+      const opacityPercent = ((rectangleTop * -1 - rectangleHeight) / rectangleHeight) + 2;
 
       element.style.opacity = opacityPercent.toString();
     });

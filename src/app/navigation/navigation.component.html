@@ -6,8 +6,16 @@
   data-aos-once="false"
 >
   <div id="menu-element__container" class="default-background">
-    <span role="presentation" class="menu-element">//</span>
-    <span role="menuitem" class="menu-element" routerLink="/">Start</span>
+    <span role="presentation" class="menu-element" routerLink="/">//</span>
+    <span
+      role="menuitem"
+      class="menu-element"
+      [class.isActive]="aboutActive"
+      [class.accent]="aboutActive"
+      routerLink="/"
+      fragment="start"
+      >About</span
+    >
     <span
       role="menuitem"
       class="menu-element"

@@ -5,16 +5,18 @@
   [class.dark-theme]="isDarkMode"
 >
   <div id="responsive-container">
+    <div id="start"></div>
     <mat-progress-bar
       id="progress-bar"
       mode="determinate"
       [value]="scrollPercentage"
       color="accent"
       data-aos="fade-down"
-      data-aos-anchor-placement="top-center"
-      data-aos-anchor="#project-list"
+      data-aos-anchor-placement="center-center"
+      data-aos-anchor="#navigation"
     ></mat-progress-bar>
     <app-navigation></app-navigation>
+    <app-about></app-about>
     <app-projects></app-projects>
     <app-contact></app-contact>
   </div>

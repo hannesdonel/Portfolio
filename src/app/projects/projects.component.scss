@@ -1,4 +1,3 @@
-/* stylelint-disable scss/operator-no-newline-after */
 #projects {
   margin-top: calc(
     var(--menubar-height) * -1 + var(--menubar-padding) * -1 +
@@ -7,4 +6,5 @@
   padding-top: calc(
     var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
   );
+  min-height: 100vh;
 }

@@ -4,6 +4,7 @@
   ],
   "extends": "stylelint-config-recommended-scss",
   "rules": {
-    "scss/no-global-function-names": null
+    "scss/no-global-function-names": null,
+    "scss/operator-no-newline-after": null
   }
 }

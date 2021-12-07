@@ -1,3 +1,5 @@
+@import "../device-sizes";
+
 #theme-container {
   position: relative;
   z-index: 0;
@@ -7,7 +9,11 @@
 #responsive-container {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 0 var(--globalPaddingLeftRight);
+  padding: 0 var(--globalPaddingLeftRight-small);
+
+  @include xl {
+    padding: 0 var(--globalPaddingLeftRight);
+  }
 
   #progress-bar {
     position: fixed;

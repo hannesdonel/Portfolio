@@ -2,15 +2,12 @@
   <div
     class="project__container"
     *ngFor="let project of projects"
-    data-aos="fade-up"
-    data-aos-anchor-placement="top-center"
-    data-aos-anchor="#project-list"
     id="{{ project.id }}"
   >
     <mat-card class="project">
       <mat-card-header>
         <mat-card-title>
-          {{ project.title }}
+          <b>{{ project.title }}</b>
         </mat-card-title>
         <mat-card-subtitle>
           {{ project.subtitle }}
@@ -22,11 +19,11 @@
             technologie
           }}</mat-chip>
         </mat-chip-list>
-        <img
-          [src]="project.sampleImage"
-          alt="Example picture of project {{ project.title }}"
-        />
         <mat-accordion>
+          <img
+            [src]="project.sampleImage"
+            alt="Example picture of project {{ project.title }}"
+          />
           <mat-expansion-panel
             (opened)="descriptionOpenState = project.id"
             [expanded]="descriptionOpenState === project.id"

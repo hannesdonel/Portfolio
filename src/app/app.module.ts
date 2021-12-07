@@ -19,6 +19,7 @@ import { ImprintComponent } from './imprint/imprint.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ProjectComponent } from './project/project.component';
     NavigationComponent,
     ContactComponent,
     ProjectComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

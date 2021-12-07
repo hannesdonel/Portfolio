@@ -12,11 +12,21 @@ export class NavigationComponent implements OnInit {
     public app: AppComponent,
   ) { }
 
+  public aboutActive = false;
+
   public projectsActive = false;
 
   public contactActive = false;
 
   ngOnInit() {
+    // Check if about is visible to set menu active
+    document.addEventListener('scroll', (): void => {
+      /* eslint-disable-next-line */
+      services({ elementID: 'about' }).isInViewport()
+        ? this.aboutActive = true
+        : this.aboutActive = false;
+    });
+
     // Check if projects are visible to set menu active
     document.addEventListener('scroll', (): void => {
       /* eslint-disable-next-line */
@@ -25,7 +35,7 @@ export class NavigationComponent implements OnInit {
         : this.projectsActive = false;
     });
 
-    // Check if projects are visible to set menu active
+    // Check if contact is visible to set menu active
     document.addEventListener('scroll', (): void => {
       /* eslint-disable-next-line */
       services({ elementID: 'contact' }).isInViewport()
