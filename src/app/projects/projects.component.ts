@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import services from '../services';
 
 @Component({
   selector: 'app-projects',

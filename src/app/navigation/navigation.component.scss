@@ -25,10 +25,11 @@
   align-items: center;
   height: min-content;
   margin-right: calc(var(--globalPaddingLeftRight) * -1);
-  padding: 0.1vh var(--globalPaddingLeftRight) 0.1vh 1vw;
+  padding: 1vh var(--globalPaddingLeftRight) 1vh 1vw;
+  border-radius: var(--border-radius);
 
   @include xxl {
-    padding: 0.1vh 0 0.1vh 0.3vw;
+    padding: 0.1vh var(--globalPaddingLeftRight) 0.1vh 0.3vw;
   }
 }
 

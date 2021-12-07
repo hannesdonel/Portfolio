@@ -67,7 +67,7 @@
   #hannes-donel__slashes {
     display: inline-block;
     animation: fadeInLeft var(--mediumSpeed) var(--fastSpeed) backwards;
-    font-size: var(--bigFont);
+    font-size: min(4.5vw, 35px);
     margin: 0;
   }
 

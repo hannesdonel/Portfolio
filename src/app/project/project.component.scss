@@ -1,20 +1,29 @@
+@import "../../device-sizes";
+
 #project-list {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
-.project {
-  margin: min(2%, 20px) 0;
-  border: black solid 1px;
-  border-radius: 2px;
-  width: 66%;
-  align-self: flex-start;
-
-  &:nth-child(2n + 1) {
-    align-self: flex-end;
-  }
+.project__container {
+  margin: max(4%, 20px) 0;
+  width: 100%;
+  transition: all var(--fastSpeed);
 
   &:first-child {
-    margin: 0 0 min(2%, 20px);
+    margin: 0 0 min(4%, 20px);
+  }
+
+  mat-card-actions {
+    margin: 0 !important;
+  }
+
+  img {
+    width: 100%;
+    margin-top: 14px;
+    border-radius: var(--border-radius);
+  }
+
+  ul {
+    padding-left: 15px;
   }
 }

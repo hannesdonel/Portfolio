@@ -15,6 +15,18 @@ const services = (props: Props): Services => {
     });
   };
 
+  const getScrollPercentage = (): number => {
+    const element = document.getElementById(elementID)!;
+    const elementInfo = element!.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const rectangleHeight = elementInfo.height - windowHeight;
+    const rectangleTop = elementInfo.top;
+
+    return rectangleTop > 0
+      ? 0
+      : Math.abs(rectangleTop) / (rectangleHeight / 100);
+  };
+
   const isInViewport = (): boolean => {
     const element = document.getElementById(elementID)!;
     const rect = element.getBoundingClientRect();
@@ -26,6 +38,7 @@ const services = (props: Props): Services => {
 
   return {
     fadeOnScroll,
+    getScrollPercentage,
     isInViewport,
   };
 };

@@ -7,8 +7,6 @@ import services from '../services';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements OnInit {
-  constructor() { }
-
   ngOnInit(): void {
     services({ elementID: 'welcome' }).fadeOnScroll();
   }

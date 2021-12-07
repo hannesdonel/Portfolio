@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import projectList from './project-list';
+import { Project } from '../data-types';
 
 @Component({
   selector: 'app-project',
@@ -6,30 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent {
-  projects = [
-    {
-      name: 'More Movie Metadata',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-    {
-      name: 'More Movie Metadata - Angular Client',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-    {
-      name: 'More Movie Metadata - React Client',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-    {
-      name: 'Meet',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-    {
-      name: 'Simple Chat',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-    {
-      name: 'Pokédex',
-      description: 'Test, hallo blablablablababl, das ist doch was wir wollen.',
-    },
-  ];
+  public projects: Array<Project> = projectList;
+
+  public descriptionOpenState?: string;
+
+  public functionalityOpenState?: string;
 }

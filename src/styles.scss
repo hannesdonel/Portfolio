@@ -4,13 +4,15 @@
 :root {
   --menubar-height: 80px;
   --menubar-padding: 5px;
+  --progress-bar-height: 5px;
+  --border-radius: 4px;
   --lightSpeed: 0.25s;
   --fastSpeed: 0.5s;
   --mediumSpeed: 1s;
   --slowSpeed: 1.5s;
   --smallerFont: 0.75em;
   --smallFont: 1em;
-  --normalFont: min(3vw, 20px);
+  --normalFont: min(4vw, 20px);
   --bigFont: 1.5em;
   --fastTransition: 0.15s ease-in-out;
   --standardTransition: 0.25s ease-in-out;
@@ -35,6 +37,15 @@ body {
   z-index: 1;
   position: relative;
   background: inherit;
+}
+
+mat-card {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+mat-chip:after {
+  background-color: unset !important;
 }
 
 // Hide things
