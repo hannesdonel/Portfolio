@@ -76,6 +76,11 @@ $Portfolio-theme-light: mat.define-light-theme(
   background-color: #fafafa;
 }
 
+.snack-bar {
+  background: #303030;
+  color: white;
+}
+
 // DARK THEME
 
 .dark-theme {
@@ -87,5 +92,10 @@ $Portfolio-theme-light: mat.define-light-theme(
 
   .default-background {
     background-color: #303030;
+  }
+
+  &.snack-bar {
+    background: #fafafa;
+    color: black;
   }
 }

@@ -18,7 +18,16 @@ interface Project {
   sampleImage: string,
   githubUrl: string,
   appUrl: string
-
 }
 
-export { Props, Services, Project };
+interface ContactData {
+  name: string,
+  company: string,
+  email: string,
+  phone: string,
+  message: string,
+}
+
+export {
+  Props, Services, Project, ContactData,
+};

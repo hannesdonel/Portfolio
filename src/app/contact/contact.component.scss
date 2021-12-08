@@ -1,6 +1,54 @@
+@import "../../device-sizes";
+
 #contact {
-  padding-top: calc(
-    var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
-  );
+  // scroll-margin-top: calc(
+  //   var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
+  // );
+  // margin-top: calc(
+  //   var(--menubar-height) * -1 + var(--menubar-padding) * -1 +
+  //     var(--progress-bar-height) * -1
+  // );
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  #contact-form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+
+    @include lg {
+      width: 66%;
+    }
+
+    @include xxl {
+      width: 50%;
+    }
+
+    .form-field {
+      width: 100%;
+    }
+
+    button,
+    #contact-form__headline {
+      align-self: flex-start;
+    }
+
+    #contact-form__headline {
+      margin: max(2%, 20px) 0 max(6%, 20px);
+    }
+  }
+
+  #contact-form {
+    * {
+      font-family: inherit !important;
+      font-size: var(--smallFont) !important;
+    }
+  }
 }

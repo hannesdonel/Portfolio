@@ -11,11 +11,15 @@
   align-items: center;
   justify-content: flex-end;
   padding: var(--menubar-padding) 0;
+  font-size: var(--mediumFont) !important;
+
+  @include lg {
+    font-size: var(--bigFont) !important;
+  }
 
   mat-icon {
     display: flex;
     align-items: center;
-    font-size: var(--bigFont) !important;
     width: fit-content;
   }
 }

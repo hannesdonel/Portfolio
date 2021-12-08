@@ -9,32 +9,23 @@
     margin: 0 0 min(4%, 20px);
   }
 
+  mat-expansion-panel * {
+    font-size: var(--normalFont) !important;
+  }
+
   mat-card-title * {
     font-size: var(--normalFont) !important;
+  }
+
+  @include sm {
+    mat-card-title * {
+      font-size: var(--mediumFont) !important;
+    }
   }
 
   mat-card,
   mat-card * {
     font-family: inherit !important;
-    font-size: var(--smallFont) !important;
-  }
-
-  @include sm {
-    mat-card {
-      font-size: inherit !important;
-    }
-
-    mat-card * {
-      font-size: initial !important;
-    }
-
-    mat-card-title * {
-      font-size: var(--bigFont) !important;
-    }
-  }
-
-  mat-chip:after {
-    background-color: unset !important;
   }
 
   @include md {
@@ -49,8 +40,16 @@
     }
   }
 
+  mat-chip:after {
+    background-color: unset !important;
+  }
+
   mat-card-actions {
     margin: 0 !important;
+
+    * {
+      font-size: var(--normalFont) !important;
+    }
   }
 
   img {

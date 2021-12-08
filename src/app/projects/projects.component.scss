@@ -1,8 +1,4 @@
 #projects {
-  margin-top: calc(
-    var(--menubar-height) * -1 + var(--menubar-padding) * -1 +
-      var(--progress-bar-height) * -1
-  );
   padding-top: calc(
     var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
   );
