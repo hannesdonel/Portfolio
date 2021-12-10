@@ -1,3 +1,5 @@
+@import "../../device-sizes";
+
 #about {
   scroll-margin-top: calc(
     var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
@@ -6,10 +8,21 @@
     var(--menubar-height) * -1 + var(--menubar-padding) * -1 +
       var(--progress-bar-height) * -1
   );
+
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include smallHeight {
+    margin-top: 0;
+    justify-content: flex-start;
+
+    p,
+    h2 {
+      margin-top: 0;
+    }
+  }
 }

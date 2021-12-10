@@ -13,4 +13,23 @@ export class ProjectComponent {
   public descriptionOpenState?: string;
 
   public functionalityOpenState?: string;
+
+  public wideScreen = true;
+
+  ngOnInit(): void {
+    this.setWideScreen();
+
+    window.addEventListener('resize', this.setWideScreen);
+  }
+
+  setWideScreen = (): void => {
+    const { innerWidth, innerHeight } = window;
+    const ratio = innerHeight / innerWidth;
+
+    if (ratio < 1) {
+      this.wideScreen = true;
+    } else {
+      this.wideScreen = false;
+    }
+  };
 }

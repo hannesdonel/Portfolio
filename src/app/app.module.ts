@@ -13,6 +13,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { RfxParallaxModule } from 'rfx-parallax';
 
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -26,6 +31,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
+import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
+import { SocialLinksComponent } from './social-links/social-links.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +44,8 @@ import { AboutComponent } from './about/about.component';
     ContactComponent,
     ProjectComponent,
     AboutComponent,
+    PrivacyNoticeComponent,
+    SocialLinksComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +62,10 @@ import { AboutComponent } from './about/about.component';
     MatProgressBarModule,
     MatInputModule,
     MatSnackBarModule,
+    MatCheckboxModule,
+    MatBottomSheetModule,
+    MatDialogModule,
+    RfxParallaxModule,
     NoopAnimationsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,

@@ -1,15 +1,6 @@
 @import "../../device-sizes";
 
 #contact {
-  // scroll-margin-top: calc(
-  //   var(--menubar-height) + var(--menubar-padding) + var(--progress-bar-height)
-  // );
-  // margin-top: calc(
-  //   var(--menubar-height) * -1 + var(--menubar-padding) * -1 +
-  //     var(--progress-bar-height) * -1
-  // );
-  min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,27 +12,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
 
-    @include lg {
-      width: 66%;
-    }
-
-    @include xxl {
-      width: 50%;
-    }
-
-    .form-field {
+    #contact-form__headline--container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
       width: 100%;
     }
 
-    button,
     #contact-form__headline {
-      align-self: flex-start;
-    }
+      margin: max(2%, 20px) 0;
 
-    #contact-form__headline {
-      margin: max(2%, 20px) 0 max(6%, 20px);
+      @include smallScreens {
+        margin-top: 0;
+      }
+
+      span {
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 
@@ -49,6 +41,53 @@
     * {
       font-family: inherit !important;
       font-size: var(--smallFont) !important;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: calc(
+      var(--menubar-height) + var(--menubar-padding) +
+        var(--progress-bar-height)
+    );
+    min-height: calc(
+      100vh -
+        (
+          var(--menubar-height) + var(--menubar-padding) +
+            var(--progress-bar-height)
+        )
+    );
+
+    @include lg {
+      width: 70%;
+    }
+
+    @include md {
+      min-height: 100vh;
+      justify-content: center;
+      padding-top: 0;
+    }
+
+    @include xxl {
+      width: 53%;
+    }
+
+    .form-field {
+      width: 100%;
+    }
+
+    button {
+      align-self: flex-start;
+    }
+
+    #last-name {
+      opacity: 0;
+      height: 0;
+      position: fixed;
+      bottom: 0;
+      z-index: -1;
     }
   }
 }

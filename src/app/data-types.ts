@@ -1,11 +1,22 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+
 interface Props {
-  elementID: string,
+  elementID?: string,
+  snackBar?: MatSnackBar,
+  contactForm?: FormGroup,
+  isDarkMode?: boolean,
+  formGroupDirective?: FormGroupDirective
 }
 
 interface Services {
   fadeOnScroll(): void,
   getScrollPercentage(): number,
   isInViewport(): boolean,
+  handleError(error: HttpErrorResponse): Observable<never>,
+  handleSuccess(res: Object): Object
 }
 
 interface Project {

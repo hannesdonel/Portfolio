@@ -1,7 +1,7 @@
 @import "../../device-sizes";
 
 .project__container {
-  margin: max(8%, 20px) 0;
+  margin: max(25%, 20px) 0;
   width: 100%;
   transition: all var(--fastSpeed);
 
@@ -28,17 +28,17 @@
     font-family: inherit !important;
   }
 
-  @include md {
-    mat-card {
-      background: none !important;
-      box-shadow: none !important;
-      padding: 0 !important;
-    }
+  // @include md {
+  //   mat-card {
+  //     background: none !important;
+  //     box-shadow: none !important;
+  //     padding: 0 !important;
+  //   }
 
-    mat-accordion * {
-      box-shadow: none !important;
-    }
-  }
+  //   mat-accordion * {
+  //     box-shadow: none !important;
+  //   }
+  // }
 
   mat-chip:after {
     background-color: unset !important;
@@ -52,10 +52,26 @@
     }
   }
 
-  img {
+  .image-container {
     width: 100%;
+    height: 30vh;
     margin-top: 14px;
     border-radius: var(--border-radius);
+    z-index: 0;
+    overflow-y: hidden;
+    text-align: center;
+
+    @include sm {
+      height: 35vh;
+    }
+
+    @include md {
+      height: 50vh;
+    }
+
+    img {
+      height: 100%;
+    }
   }
 
   ul {

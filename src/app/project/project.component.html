@@ -1,6 +1,6 @@
 <div
   id="project-list"
-  data-aos="fade-up"
+  data-aos="fade-in"
   data-aos-anchor-placement="top-center"
 >
   <div
@@ -9,7 +9,7 @@
     id="{{ project.id }}"
   >
     <mat-card class="project">
-      <mat-card-header>
+      <mat-card-header class="default-cursor">
         <mat-card-title>
           <b>{{ project.title }}</b>
         </mat-card-title>
@@ -24,10 +24,20 @@
           }}</mat-chip>
         </mat-chip-list>
         <mat-accordion>
-          <img
-            [src]="project.sampleImage"
-            alt="Example picture of project {{ project.title }}"
-          />
+          <div
+            *ngIf="wideScreen"
+            class="image-container"
+            libRfxParallax
+            [imageUrl]="project.sampleImage"
+            [forceFullWidth]="true"
+            [parallaxPercentage]="100"
+          ></div>
+          <div class="image-container" *ngIf="!wideScreen">
+            <img
+              [src]="project.sampleImage"
+              alt="Example image of project {{ project.title }}"
+            />
+          </div>
           <mat-expansion-panel
             (opened)="descriptionOpenState = project.id"
             [expanded]="descriptionOpenState === project.id"
@@ -35,7 +45,7 @@
             <mat-expansion-panel-header>
               <mat-panel-title>Description</mat-panel-title>
             </mat-expansion-panel-header>
-            <p>{{ project.description }}</p>
+            <p class="default-cursor">{{ project.description }}</p>
           </mat-expansion-panel>
           <mat-expansion-panel
             (opened)="functionalityOpenState = project.id"
@@ -44,7 +54,7 @@
             <mat-expansion-panel-header>
               <mat-panel-title>Functionality</mat-panel-title>
             </mat-expansion-panel-header>
-            <ul>
+            <ul class="default-cursor">
               <li *ngFor="let function of project.functionality">
                 {{ function }}
               </li>

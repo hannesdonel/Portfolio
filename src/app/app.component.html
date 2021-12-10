@@ -12,13 +12,47 @@
       [value]="scrollPercentage"
       color="accent"
       data-aos="fade-down"
-      data-aos-anchor-placement="center-center"
-      data-aos-anchor="#navigation"
+      data-aos-anchor-placement="top-center"
+      data-aos-anchor="#projects"
     ></mat-progress-bar>
     <app-navigation></app-navigation>
     <app-about></app-about>
     <app-projects></app-projects>
     <app-contact></app-contact>
+    <div
+      id="social-button__container"
+      data-aos="fade-in"
+      data-aos-anchor-placement="top-top"
+      data-aos-anchor="#projects"
+    >
+      <button
+        id="social-button"
+        mat-raised-button
+        (click)="openSocialLinks()"
+        [class.invisible]="!showSocialButton"
+      >
+        <mat-icon>people</mat-icon>
+      </button>
+    </div>
+    <mat-divider role="separator"></mat-divider>
+    <footer>
+      <p class="default-cursor">© 2021 Hannes Donel</p>
+      <span (click)="openImprint()">Imprint</span>
+      <span class="default-cursor"> | </span>
+      <span (click)="openPrivacyNotice()">Privacy</span>
+    </footer>
+    <button
+      mat-fab
+      id="scroll-up"
+      color="primary"
+      aria-label="Scroll up button"
+      data-aos="fade-in"
+      data-aos-anchor-placement="top-top"
+      data-aos-anchor="#projects"
+      (click)="scrollToTop()"
+    >
+      <mat-icon>arrow_upward</mat-icon>
+    </button>
   </div>
 </div>
 

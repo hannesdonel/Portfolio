@@ -37,3 +37,19 @@ $screen-xxl-min: 1550px;
     @content;
   }
 }
+
+// Rotated Phones
+$small-height: 550px;
+@mixin smallHeight {
+  @media all and (max-height: #{$small-height}) {
+    @content;
+  }
+}
+
+// Small screens
+$small-screen: 800px;
+@mixin smallScreens {
+  @media all and (max-height: #{$small-screen}) and (max-width: #{$small-screen}) {
+    @content;
+  }
+}

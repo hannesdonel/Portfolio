@@ -1,5 +1,6 @@
 @import "./themes";
 @import "./device-sizes";
+@import "./animations";
 
 // Global Variables
 :root {
@@ -18,7 +19,7 @@
   --bigFont: 1.5em;
   --fastTransition: 0.15s ease-in-out;
   --standardTransition: 0.25s ease-in-out;
-  --globalPaddingLeftRight-small: max(2%, 10px);
+  --globalPaddingLeftRight-small: max(5%, 10px);
   --globalPaddingLeftRight: max(15%, 10px);
 }
 
@@ -47,7 +48,34 @@ body {
   margin-left: 0 !important;
 }
 
+mat-checkbox {
+  padding-bottom: 1.25em;
+  align-self: flex-start;
+  width: 100% !important;
+
+  span {
+    white-space: pre-wrap !important;
+  }
+}
+
+.cdk-overlay-pane {
+  width: 95vw !important;
+  max-width: 1024px !important;
+  justify-content: center;
+}
+
+.default-cursor {
+  &:hover {
+    cursor: default !important;
+  }
+}
+
 // Hide things
 .display-none {
   display: none !important;
+}
+
+.invisible {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }

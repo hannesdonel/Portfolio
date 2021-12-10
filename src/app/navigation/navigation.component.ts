@@ -18,6 +18,8 @@ export class NavigationComponent implements OnInit {
 
   public contactActive = false;
 
+  public toggleDarkMode = (): void => this.app.toggleDarkMode();
+
   ngOnInit() {
     // Check if about is visible to set menu active
     document.addEventListener('scroll', (): void => {
@@ -43,9 +45,4 @@ export class NavigationComponent implements OnInit {
         : this.contactActive = false;
     });
   }
-
-  toggleDarkMode = (): void => {
-    this.app.isDarkMode = !this.app.isDarkMode;
-    localStorage.setItem('darkMode', this.app.isDarkMode.toString());
-  };
 }

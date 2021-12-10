@@ -1,14 +1,23 @@
 <div id="contact">
-  <div
-    id="contact-form__container"
-    data-aos="fade-up"
-    data-aos-anchor-placement="top-center"
-  >
-    <h2 id="contact-form__headline">- Get in touch with me</h2>
+  <div id="contact-form__container">
+    <div
+      id="contact-form__headline--container"
+      data-aos="fade-right"
+      data-aos-anchor-placement="top-center"
+    >
+      <h2 id="contact-form__headline" class="default-cursor">
+        How can I contribute to your project?
+        <span routerLink="/" fragment="contact-form" class="accent"
+          >Let me know.</span
+        >
+      </h2>
+    </div>
     <form
       id="contact-form"
       [formGroup]="contactForm"
       (ngSubmit)="sendMessage()"
+      data-aos="fade-in"
+      data-aos-anchor-placement="top-center"
     >
       <mat-form-field class="form-field">
         <input
@@ -94,13 +103,33 @@
           </span>
         </mat-error>
       </mat-form-field>
+      <!-- HONEYPOT -->
+      <input
+        matInput
+        id="last-name"
+        type="text"
+        placeholder="Last Name"
+        formControlName="lastName"
+      />
+      <!-- HONEYPOT -->
+      <mat-checkbox
+        [checked]="dataRegulationAgreement"
+        (change)="toggleAgreement()"
+        >I've read the
+        <span id="privacy-link" class="accent" (click)="openPrivacyNotice()"
+          >data protection regulations</span
+        >
+        and I hereby agree to them.</mat-checkbox
+      >
       <button
         mat-raised-button
         color="primary"
+        [class.spinner]="loading"
         type="submit"
-        [disabled]="contactForm.invalid"
+        [disabled]="contactForm.invalid || !dataRegulationAgreement"
       >
-        Send
+        <span *ngIf="!loading">Send</span>
+        <span *ngIf="loading"> </span>
       </button>
     </form>
   </div>
