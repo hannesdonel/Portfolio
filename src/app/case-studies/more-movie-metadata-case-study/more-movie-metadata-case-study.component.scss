@@ -1,6 +1,8 @@
 @import "../../../device-sizes";
 
 #case-study {
+  text-align: justify;
+
   section:not(:first-child) {
     margin: max(70px, 8%) 0;
   }
@@ -24,6 +26,7 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 25px;
+      align-items: center;
     }
 
     .grid-2-even {
