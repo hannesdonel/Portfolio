@@ -68,6 +68,12 @@
     img {
       height: 100%;
     }
+
+    &.small {
+      display: flex;
+      justify-content: center;
+      overflow-x: none;
+    }
   }
 
   ul {
