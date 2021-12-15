@@ -14,7 +14,7 @@ const services = (props: Props): Services => {
       const element = document.getElementById(elementID!)!;
       const elementInfo = element!.getBoundingClientRect();
       const rectangleHeight = elementInfo.height;
-      const rectangleTop = window.scrollY;
+      const rectangleTop = document.documentElement.scrollTop;
       const opacityPercent = ((rectangleTop * -1 - rectangleHeight) / rectangleHeight) + 2;
 
       element.style.opacity = opacityPercent.toString();
@@ -24,7 +24,7 @@ const services = (props: Props): Services => {
   const getScrollPercentage = (): number => {
     const element = document.getElementById(elementID!)!;
     const elementInfo = element!.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+    const windowHeight = document.documentElement.clientHeight;
     const rectangleHeight = elementInfo.height - windowHeight * 2;
     const rectangleTop = elementInfo.top + windowHeight;
 

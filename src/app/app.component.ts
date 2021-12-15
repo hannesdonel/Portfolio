@@ -39,12 +39,30 @@ export class AppComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    // Get scroll percentage to set the scroll progress bar
     document.addEventListener('scroll', (): void => {
       this.scrollPercentage = services({ elementID: 'responsive-container' }).getScrollPercentage();
     });
+
+    // Initiate Parallax plugin
     this.rfxParallaxService.initListeners();
+
     this.checkStorageForDarkMode();
     this.toggleOverlayClass();
+
+    // Keep scroll position on window resize o prevent jumping
+    let pageHeight = 0;
+
+    window.onload = () => {
+      pageHeight = document.body.getBoundingClientRect().height;
+    };
+    window.addEventListener('resize', () => {
+      const currentOffset = document.documentElement.scrollTop;
+      const newPageHeight = document.body.getBoundingClientRect().height;
+      const dHeight = newPageHeight / pageHeight;
+      window.scrollTo(0, currentOffset * dHeight);
+      pageHeight = newPageHeight;
+    }, true);
   }
 
   toggleOverlayClass = (): void => {
