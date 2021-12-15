@@ -9,7 +9,12 @@
     margin: max(1%, 10px) 0;
   }
 
-  p {
+  p,
+  ul {
     padding-bottom: max(2%, 20px);
+  }
+
+  ul {
+    margin-bottom: max(1%, 10px);
   }
 }

@@ -13,14 +13,12 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 
   @include smallHeight {
     margin-top: 0;
     justify-content: flex-start;
 
-    p,
     h2 {
       margin-top: 0;
     }
