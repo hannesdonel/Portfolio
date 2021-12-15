@@ -64,6 +64,13 @@
       </mat-card-content>
       <mat-divider inset></mat-divider>
       <mat-card-actions align="end">
+        <button
+          mat-button
+          *ngIf="project.caseStudy"
+          (click)="openCaseStudy(project.caseStudy)"
+        >
+          Case
+        </button>
         <a mat-button target="_blank" href="{{ project.githubUrl }}"
           >See code</a
         >

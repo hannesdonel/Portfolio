@@ -33,6 +33,7 @@ import { ProjectComponent } from './project/project.component';
 import { AboutComponent } from './about/about.component';
 import { PrivacyNoticeComponent } from './privacy-notice/privacy-notice.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
+import { MoreMovieMetadataCaseStudyComponent } from './case-studies/more-movie-metadata-case-study/more-movie-metadata-case-study.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SocialLinksComponent } from './social-links/social-links.component';
     AboutComponent,
     PrivacyNoticeComponent,
     SocialLinksComponent,
+    MoreMovieMetadataCaseStudyComponent,
   ],
   imports: [
     BrowserModule,

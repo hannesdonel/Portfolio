@@ -27,13 +27,13 @@ export class AppComponent implements OnInit {
 
   public showSocialButton = true;
 
-  config: MatBottomSheetConfig = {
+  public bottomSheetConfig: MatBottomSheetConfig = {
     restoreFocus: true,
     closeOnNavigation: true,
     ariaLabel: 'Social media links bottom sheet',
   };
 
-  dialogConfig: MatDialogConfig = {
+  public dialogConfig: MatDialogConfig = {
     restoreFocus: true,
     closeOnNavigation: true,
   };
@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
 
   openSocialLinks = (): void => {
     this.showSocialButton = false;
-    this.bottomSheet.open(SocialLinksComponent, this.config)
+    this.bottomSheet.open(SocialLinksComponent, this.bottomSheetConfig)
       .afterDismissed().subscribe(() => { this.showSocialButton = true; });
     if (this.isDarkMode) {
       document.querySelectorAll('.social-link').forEach((link) => link.classList.add('invert-color'));

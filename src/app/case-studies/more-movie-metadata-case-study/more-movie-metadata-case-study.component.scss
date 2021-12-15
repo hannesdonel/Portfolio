@@ -1,0 +1,39 @@
+@import "../../../device-sizes";
+
+#case-study {
+  section:not(:first-child) {
+    margin: max(70px, 8%) 0;
+  }
+
+  .main-header {
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .text-with-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include md {
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 25px;
+    }
+
+    .grid-2-even {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+  }
+
+  .example-image {
+    margin: max(10px, 2%) 0;
+  }
+}

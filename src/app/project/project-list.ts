@@ -22,6 +22,7 @@ const projectList: Array<Project> = [
     sampleImage: '../assets/MMM_Angular_example.jpg',
     githubUrl: 'https://github.com/hannesdonel/MMM-client-Angular',
     appUrl: 'https://hannesdonel.github.io/MMM-client-Angular',
+    caseStudy: 'more-movie-metadata',
   },
   {
     id: 'project_1',

@@ -28,7 +28,8 @@ interface Project {
   functionality: Array<string>,
   sampleImage: string,
   githubUrl: string,
-  appUrl: string
+  appUrl: string,
+  caseStudy?: string
 }
 
 interface ContactData {
