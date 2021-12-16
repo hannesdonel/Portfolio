@@ -22,13 +22,14 @@ interface Services {
 interface Project {
   id: string,
   title: string,
+  link: string,
   subtitle: string,
   description: string,
   technologies: Array<string>,
   functionality: Array<string>,
   sampleImage: string,
-  githubUrl: string,
-  appUrl: string,
+  githubUrl?: string,
+  appUrl?: string,
   caseStudy?: string
 }
 

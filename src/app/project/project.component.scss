@@ -1,12 +1,20 @@
 @import "../../device-sizes";
 
 .project__container {
-  margin: max(25%, 20px) 0;
+  padding: calc(
+      var(--menubar-height) + var(--menubar-padding) +
+        var(--progress-bar-height)
+    )
+    0;
   width: 100%;
   transition: all var(--fastSpeed);
 
   &:first-child {
-    margin: 0 0 min(4%, 20px);
+    padding: 0 0
+      calc(
+        var(--menubar-height) + var(--menubar-padding) +
+          var(--progress-bar-height)
+      );
   }
 
   mat-card-title * {
@@ -23,18 +31,6 @@
   mat-card * {
     font-family: inherit !important;
   }
-
-  // @include md {
-  //   mat-card {
-  //     background: none !important;
-  //     box-shadow: none !important;
-  //     padding: 0 !important;
-  //   }
-
-  //   mat-accordion * {
-  //     box-shadow: none !important;
-  //   }
-  // }
 
   mat-chip:after {
     background-color: unset !important;

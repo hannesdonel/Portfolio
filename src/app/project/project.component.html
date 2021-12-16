@@ -6,7 +6,7 @@
   <div
     class="project__container"
     *ngFor="let project of projects"
-    id="{{ project.id }}"
+    id="{{ project.link }}"
   >
     <mat-card class="project">
       <mat-card-header class="default-cursor">
@@ -71,10 +71,20 @@
         >
           Case
         </button>
-        <a mat-button target="_blank" href="{{ project.githubUrl }}"
+        <a
+          mat-button
+          target="_blank"
+          href="{{ project.githubUrl }}"
+          *ngIf="project.githubUrl"
           >See code</a
         >
-        <a mat-button target="_blank" href="{{ project.appUrl }}">Use app</a>
+        <a
+          mat-button
+          target="_blank"
+          href="{{ project.appUrl }}"
+          *ngIf="project.appUrl"
+          >Use app</a
+        >
       </mat-card-actions>
     </mat-card>
   </div>
