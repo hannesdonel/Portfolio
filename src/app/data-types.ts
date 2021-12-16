@@ -8,13 +8,15 @@ interface Props {
   snackBar?: MatSnackBar,
   contactForm?: FormGroup,
   isDarkMode?: boolean,
-  formGroupDirective?: FormGroupDirective
+  formGroupDirective?: FormGroupDirective,
+  pageHeight?: number;
 }
 
 interface Services {
   fadeOnScroll(): void,
   getScrollPercentage(): number,
   isInViewport(): boolean,
+  keepScrollPosition(): number,
   handleError(error: HttpErrorResponse): Observable<never>,
   handleSuccess(res: Object): Object
 }

@@ -4,7 +4,7 @@ import { Props, Services } from './data-types';
 
 const services = (props: Props): Services => {
   const {
-    elementID, snackBar, contactForm, isDarkMode, formGroupDirective,
+    elementID, snackBar, contactForm, isDarkMode, formGroupDirective, pageHeight,
   } = props;
 
   // Scroll services
@@ -42,6 +42,16 @@ const services = (props: Props): Services => {
     );
   };
 
+  // Keep scroll position on window resize o prevent jumping
+  const keepScrollPosition = (): number => {
+    const currentOffset = document.documentElement.scrollTop;
+    const newPageHeight = document.body.getBoundingClientRect().height;
+    const dHeight = newPageHeight / pageHeight!;
+    window.scrollTo(0, currentOffset * dHeight);
+
+    return newPageHeight;
+  };
+
   // Response handler
 
   const handleError = (error: HttpErrorResponse): Observable<never> => {
@@ -75,6 +85,7 @@ const services = (props: Props): Services => {
     fadeOnScroll,
     getScrollPercentage,
     isInViewport,
+    keepScrollPosition,
     handleError,
     handleSuccess,
   };

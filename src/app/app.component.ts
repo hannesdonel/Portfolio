@@ -52,17 +52,10 @@ export class AppComponent implements OnInit {
 
     // Keep scroll position on window resize o prevent jumping
     let pageHeight = 0;
-
-    window.onload = () => {
+    window.onload = ():void => {
       pageHeight = document.body.getBoundingClientRect().height;
     };
-    window.addEventListener('resize', () => {
-      const currentOffset = document.documentElement.scrollTop;
-      const newPageHeight = document.body.getBoundingClientRect().height;
-      const dHeight = newPageHeight / pageHeight;
-      window.scrollTo(0, currentOffset * dHeight);
-      pageHeight = newPageHeight;
-    }, true);
+    window.addEventListener('resize', (): void => { pageHeight = services({ pageHeight }).keepScrollPosition(); });
   }
 
   toggleOverlayClass = (): void => {
